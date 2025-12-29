@@ -1,333 +1,271 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Shin Chong | Technopreneur, Builder, INFP</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:url" content="https://shinchong.com" />
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Shin Chong" />
-		<meta property="og:description" content="Shin Chong is on 10 years mission to build platforms & tools that spread positivity & promote personal growth in order to help people to become better version of themselves." />
-		<meta property="og:image" content="https://shinchong.com/img/backgrounds/facebook.jpg" />
-        <link href="css/init.css" rel="stylesheet" type="text/css">
-        <link href="css/ion-icons.min.css" rel="stylesheet" type="text/css">
-        <link href="css/etline-icons.min.css" rel="stylesheet" type="text/css">
-        <link href="css/theme.css" rel="stylesheet" type="text/css">  
-        <link href="css/custom.css" rel="stylesheet" type="text/css"> 
-        <link href="css/colors/blue.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRaleway:400,100,200,300%7CHind:400,300" rel="stylesheet" type="text/css">
-    </head>
-    <body data-fade-in="true">
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <title>Shin Chong | Builder & Technopreneur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        background: '#08090A', // Deep "Linear" Black
+                        surface: '#121417',
+                        border: 'rgba(255, 255, 255, 0.1)',
+                        primary: '#5E6AD2', // Subtle blurple
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities for the Linear Glow Effects */
+        body {
+            background-color: #08090A;
+            color: #A1A1AA;
+        }
         
-        <div class="pre-loader"><div></div></div>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
         
-        <!-- Start Header -->
-        <nav class="navbar nav-down" data-fullwidth="true" data-menu-style="transparent" data-animation="shrink"><!-- Styles: light, dark, transparent | Animation: hiding, shrink -->
-            <div class="container">
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px -10px rgba(94, 106, 210, 0.15);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #9CA3AF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* The Top Glow Spotlight */
+        .spotlight {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 600px;
+            background: radial-gradient(circle at top, rgba(94, 106, 210, 0.15), transparent 60%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-white">
+
+    <div class="spotlight"></div>
+
+    <nav class="fixed w-full z-50 border-b border-white/5 bg-background/80 backdrop-blur-md top-0">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-white font-bold text-lg tracking-tight">Shin Chong</a>
+            
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#current" class="hover:text-white transition-colors">Current</a>
+                <a href="#prev-venture" class="hover:text-white transition-colors">Prev. Venture</a>
+                <a href="#connect" class="hover:text-white transition-colors">Connect</a>
+            </div>
+
+            <button class="md:hidden text-white"><i class="ri-menu-line text-xl"></i></button>
+        </div>
+    </nav>
+
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="max-w-4xl text-center animate-fade-in">           
+            <div class="flex justify-center mb-8">
+                <img src="img/shin.png" alt="Shin Chong" class="w-[200px] h-[200px] rounded-full object-cover border border-white/10 shadow-lg" />
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+                Shin Chong
+            </h1>
+            
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                consume caffeine, build stuff.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#current" class="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors">
+                    Current
+                </a>
+                <a href="#prev-venture" class="px-8 py-3 border border-white/20 text-white rounded-full hover:bg-white/5 transition-colors">
+                    Prev. Venture
+                </a>
+                <a href="#hackathons" class="px-8 py-3 border border-white/20 text-white rounded-full hover:bg-white/5 transition-colors">
+                    Hackathons
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="current" class="py-12 px-6 border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">Current</h2>
+                <p class="text-gray-400">Build stuff since 2013.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card rounded-2xl p-8">
+                    <div class="h-10 w-10 bg-white/5 rounded-lg flex items-center justify-center mb-6 text-white border border-white/10">
+                        <i class="ri-code-box-line text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Wagmi Technology Sdn Bhd</h3>
+                    <p class="text-sm text-gray-500 mb-4">Director</p>
+                    <p class="leading-relaxed">Orchestrating digital experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prev-venture" class="py-12 px-6 border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">Prev. Venture</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card rounded-2xl p-8">
+                    <div class="h-10 w-10 bg-white/5 rounded-lg flex items-center justify-center mb-6 text-white border border-white/10">
+                        <i class="ri-code-box-line text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Alpha Code</h3>
+                    <p class="text-sm text-gray-500 mb-4">Co-founder</p>
+                    <p class="leading-relaxed">A Petaling Jaya based digital experience builder. We work with entrepreneurs, startups, and brands to realize inspiring ideas into immersive digital experiences.</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-8">
+                    <div class="h-10 w-10 bg-white/5 rounded-lg flex items-center justify-center mb-6 text-white border border-white/10">
+                        <i class="ri-home-smile-line text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Roomly</h3>
+                    <p class="text-sm text-gray-500 mb-4">Founder</p>
+                    <p class="leading-relaxed">A platform that connects hosts to tenants for long-term accommodation rentals, serving thousands of users to let & rent every month.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prev-works" class="py-12 px-6 border-t border-white/5 bg-surface/30">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-12">Prev. Works</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="https://collectco.my" target="_blank" class="group relative block glass-card rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                        <img src="img/companies/collectco.png" alt="Collectco" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-white font-medium text-lg">Collectco</h4>
+                        <p class="text-sm text-gray-500 mt-2">Logistics / Parcel Point Network</p>
+                    </div>
+                </a>
+
+                <a href="http://gobike.asia" target="_blank" class="group relative block glass-card rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                        <img src="img/companies/gobike.png" alt="Gobike" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-white font-medium text-lg">Gobike</h4>
+                        <p class="text-sm text-gray-500 mt-2">Transport / Bike Transit</p>
+                    </div>
+                </a>
+
+                <a href="http://room.ly" target="_blank" class="group relative block glass-card rounded-xl overflow-hidden">
+                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                        <img src="img/companies/roomly.png" alt="Roomly" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-white font-medium text-lg">Roomly</h4>
+                        <p class="text-sm text-gray-500 mt-2">PropTech / Rental Platform</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="hackathons" class="py-12 px-6 border-t border-white/5">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold text-white mb-6">Hackathons</h2>
+                <div class="space-y-4 text-gray-400 leading-relaxed">
+                    <p>Started with <strong class="text-white">Digi Challenge for Change (2013)</strong>, winning RM25,000.</p>
+                    <p>Runner up in D3 App Development Contest (2014) and 1st place in Big Data Analytics Challenge (2015).</p>
+                    <p>Culminated in 2017 with <strong class="text-white">Hack Horizon's First Prize</strong> in London, a hackathon on 30,000 feet.</p>
+                </div>
                 
-                <div class="navbar-header">
-                    <div class="container">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar top-bar"></span>
-                            <span class="icon-bar middle-bar"></span>
-                            <span class="icon-bar bottom-bar"></span>
-                        </button>
-                        <a class="navbar-brand to-top" href="#"><img src="img/assets/logo-light.png" class="logo-light" alt="#"><img src="img/assets/logo-dark.png" class="logo-dark" alt="#"></a> 
+                <div class="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-white/10">
+                    <div>
+                        <div class="text-2xl font-bold text-white">8</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-widest mt-1">Joined</div>
                     </div>
-                </div>
-
-                <div id="navbar" class="navbar-collapse collapse">
-                    <div class="container">
-                        <ul class="nav navbar-nav menu-right">                            
-                            
-                            <!-- Each section must have corresponding ID ( #hero -> id="hero" ) -->
-                            <li><a href="#hero">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#mission">Mission</a></li>
-                            <li><a href="#works">Works</a></li>
-                            <li><a href="#connect">Connect</a></li>
-                             
-                            <li class="nav-separator"></li>
-                            <li  class="nav-icon"><a href="https://www.linkedin.com/in/shin-chong-87802a3a" target="_blank"><i class="ion-social-linkedin"></i></a></li>
-                            <li  class="nav-icon"><a href="https://www.facebook.com/ishinchong" target="_blank"><i class="ion-social-facebook"></i></a></li>
-                            <li  class="nav-icon"><a href="https://www.instagram.com/ishinchong" target="_blank"><i class="ion-social-instagram"></i></a></li>
-                            <li  class="nav-icon"><a href="https://www.twitter.com/shinchong" target="_blank"><i class="ion-social-twitter"></i></a></li>
-                            <li  class="nav-icon"><a href="https://medium.com/@shinchong" target="_blank"><i class="ion-help-buoy"></i></a></li>
-                        </ul>
-                        
+                    <div>
+                        <div class="text-2xl font-bold text-white">4</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-widest mt-1">Podiums</div>
                     </div>
-                </div> 
-            </div>
-        </nav>
-        <!-- End Header -->
-        
-        <!-- Hero -->
-        <section id="hero" class="hero-fullscreen parallax" data-overlay-dark="8">
-            <div class="background-image">
-                <img src="img/backgrounds/bg-1.jpg" alt="#">
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="hero-content-slider mt20">
-                        <div>
-                            <h1>I am<br><strong>Shin Chong</strong></h1>
-                            <p class="lead">On 10 years mission to empower positivity & personal growth.</p>
-                            <a href="#about" class="btn btn-lg btn-primary btn-scroll">ABOUT ME</a>
-                            <a href="#mission" class="btn btn-lg btn-primary btn-scroll">MISSION</a>
-                        </div>
-                        <div></div>
+                    <div>
+                        <div class="text-2xl font-bold text-white">32k</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-widest mt-1">MYR Won</div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- End Hero -->
-
-        <!-- About Me -->
-        <section id="about" class="pt100 pb90">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center pb20">
-                        <img src="img/assets/shin-chong.png"/>
-                    </div>
-                    <div class="col-md-12 text-center pb20">
-                        <h2><strong>Shin Chong</strong></h2>
-                        <p class="lead"><span class="color">#TECHNOPRENEUR</span> <span class="color">#BUILDER</span> since 2013, I build impact startups,<br />and also work directly with inspiring CEOs, entrepreneurs, and brands to realise their ambitions.</p>
-                    </div>
-                    <div class="col-sm-6 feature-left">
-                        <i class="icon-laptop size-3x color"></i>
-                        <i class="icon-laptop back-icon"></i>
-                        <div class="feature-left-content">
-                            <h4><strong>Co-founder</strong><br>Alpha Code Sdn Bhd</h4>
-                            <p>Alpha Code is a Kuala Lumpur based digital experience builder, work with entrepreneurs, startups, and brands to realise inspiring ideas to immersive digital experiences.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 feature-left">
-                        <i class="icon-map size-3x color"></i>
-                        <i class="icon-map back-icon"></i>
-                        <div class="feature-left-content">
-                            <h4><strong>Founder</strong><br>Roomly</h4>
-                            <p>Roomly is a platform that connects hosts to tenants for long-term accommodation rentals, serving thousands of users to let & rent every month.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="md:w-1/2 relative">
+                <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-30"></div>
+                <img src="img/assets/hack-horizon.jpg" alt="Hack Horizon" class="relative rounded-xl border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500" />
             </div>
-        </section>
-        <!-- End About -->
+        </div>
+    </section>
 
-        <!-- Contact Info -->
-        <section id="contact" class="parallax pt110 pb70" data-overlay-dark="8">
-            <div class="background-image">
-                <img src="img/backgrounds/bg-8.jpg" alt="#">
+    <footer id="connect" class="py-24 px-6 border-t border-white/5 text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-6">Let's Connect</h2>
+            <p class="text-gray-400 mb-10">Currently based in Kuala Lumpur.</p>
+            
+            <a href="mailto:me@shinchong.com" class="text-2xl text-white hover:text-primary transition-colors font-light mb-12 block">me@shinchong.com</a>
+
+            <div class="flex justify-center gap-6">
+                <a href="https://www.linkedin.com/in/shin-chong-87802a3a" class="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white hover:bg-white/5 transition-all">
+                    <i class="ri-linkedin-fill text-xl"></i>
+                </a>
+                <a href="https://www.twitter.com/shinchong" class="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white hover:bg-white/5 transition-all">
+                    <i class="ri-twitter-x-fill text-xl"></i>
+                </a>
+                <a href="https://medium.com/@shinchong" class="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white hover:bg-white/5 transition-all">
+                    <i class="ri-article-line text-xl"></i>
+                </a>
             </div>
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-md-12 details white text-center">
-                        <div class="phone-number mb10">
-                            <h1 class="bold">me@shinchong.com</h1>
-                        </div>
-                        <div class="col-lg-12">
-                            <h4>Jaya One, <span class="color">Petaling Jaya</span></h4>
-                        </div>
-                    </div>
-                </div>
+            
+            <div class="mt-16 text-xs text-gray-600">
+                &copy; 2026 Shin Chong. All rights reserved.
             </div>
-        </section>
-        <!-- End Contact Info -->
+        </div>
+    </footer>
 
-        <!-- Mission -->
-        <section id="mission" class="pt100 pb90">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-md-12 text-center pb20">
-                        <h2><strong>10 Years Mission</strong></h2>
-                        <p class="lead">From 2020 till 2029, I'll focus to build platforms & tools that promote <span class="color">#POSITIVITY</span> & <span class="color">#PERSONALGROWTH</span>,<br />in order to help people to reach their <span class="color">#GOALS</span> & <span class="color">#HAPPINESS</span>.</p>
-                    </div>
-                    <div class="col-sm-4 feature-left">
-                        <i class="icon-genius size-3x color"></i>
-                        <i class="icon-genius back-icon"></i>
-                        <div class="feature-left-content">
-                            <h4><strong>Positivity</strong><br>Turn Negativity with Positivity</h4>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 feature-left">
-                        <i class="icon-book-open size-3x color"></i>
-                        <i class="icon-book-open back-icon"></i>
-                        <div class="feature-left-content">
-                            <h4><strong>Personal Growth</strong><br>Learn to Growth</h4>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 feature-left mb100">
-                        <i class="icon-heart size-3x color"></i>
-                        <i class="icon-heart back-icon"></i>
-                        <div class="feature-left-content">
-                            <h4><strong>Happiness</strong><br>Be happy</h4>
-                            <p></p>
-                        </div>
-                    </div>
-                    <a href="#" class="btn btn-lg btn-primary btn-scroll">TO BE UPDATED WITH MORE DETAILS</a>
-                </div>
-            </div>
-        </section>
-        <!-- End Mission -->
-
-        <!-- Hackathon Section -->
-        <section class="parallax pt40 pb40" data-overlay-light="9">
-            <div class="background-image">
-                <img src="img/backgrounds/bg-3.jpg" alt="#">
-            </div>
-            <div class="container">
-                <div class="row vertical-align">
-
-                    <div class="col-md-6 pr30 mt40 mb40">
-                        <h2><strong>Hackathons</strong></h2>
-                        <p>My first Hackathon was <Strong>Digi Challenge for Change</Strong> organised by Digi in 2013, I won RM25,000 by Marena, an app that helps users locate and arrange sport matches with other teams.</p>
-                        <p>For the next two years, I won runner up in <Strong>D3 App Development Contest</Strong> in 2014, and first place for <strong>Big Data Analytics Challenge in Angelhack</strong> in 2015.</p>
-                        <p class="mb30">In 2017, I ended my Hackathon journey with <strong>Hack Horizon</strong>'s <strong>First Prize</strong> in London, Hack Horizon is a 80-hour Hackathon which took off from Hong Kong and landed at London. The action took place at 30,000 feet on a public flight with 32 of the best entrepreneurs, engineers and designers racing to build products and services to boost travellers’ experience.</p>
-                        <h4>
-                            <strong>My Stats:</strong>
-                        </h4>
-                        <p><strong>- Total Hackathon Joined: 8</strong></p>
-                        <p><strong>- Total Podium: 4</strong></p>
-                        <p><strong>- Total Prize Pool Won: MYR 32,000</strong></p>
-                    </div>
-
-                    <div class="col-md-6 mt50 mb50">
-                        <img src="img/assets/hack-horizon.jpg" alt=""/>
-                        <div class="text-center mb40"><p>Hack Horizon final event @ London Transport Museum</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Hackathon Section -->
-
-        <!-- Works -->
-        <section id="works" class="pt100 pb90">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-md-12 text-center pb20">
-                        <h2><strong>Recent Works</strong></h2>
-                    </div>
-
-                    <div class="portfolio" data-gap="20"><!-- Values: 10, 15, 20, 25, 30 and 35 -->
-                        <!-- Portfolio Category Filters -->
-                        <ul class="vossen-portfolio-filters" data-initial-filter="*">
-                            <li data-filter="*">Show All</li>
-                            <li data-filter="startup">Startup</li>
-                            <li data-filter="jv">MVP</li>
-                        </ul>
-
-                        <!-- Portfolio Items Container-->
-                        <div class="vossen-portfolio">
-                            <!-- Portfolio Item -->
-                            <div class="col-md-4 col-sm-4" data-filter="jv">
-                                <a href="https://collectco.my" target="_blank">
-                                    <div class="portfolio-item">
-                                        <div class="item-caption">
-                                            <h4>Collectco</h4>
-                                            <p>Make send, collect & return parcel<br />1000 collection point easier</p>
-                                        </div>
-                                        <div class="item-image">
-                                            <img alt="#" src="img/companies/collectco.png")" />
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- Portfolio Item -->
-                            <div class="col-md-4 col-sm-4" data-filter="jv">
-                                <a href="http://gobike.asia" target="_blank">
-                                    <div class="portfolio-item">
-                                        <div class="item-caption">
-                                            <h4>Gobike</h4>
-                                            <p>Make bike transit service convenient<br />in Thailand</p>
-                                        </div>
-                                        <div class="item-image">
-                                            <img alt="#" src="img/companies/gobike.png" />
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- Portfolio Item -->
-                            <div class="col-md-4 col-sm-4" data-filter="startup">
-                                <a href="http://room.ly" target="_blank">
-                                    <div class="portfolio-item">
-                                        <div class="item-caption">
-                                            <h4>Roomly</h4>
-                                            <p>Make room renting faster & easier<br />in Malaysia</p>
-                                        </div>
-                                        <div class="item-image">
-                                            <img alt="#" src="img/companies/roomly.png")" />
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Works -->
-
-        <!-- Get Connected -->  
-        <section id="connect" class="parallax pt100 pb100" data-overlay-dark="9">
-            <div class="background-image">
-                <img src="img/backgrounds/bg-7.jpg" alt="#">
-            </div>
-            <div class="container">                      
-                <div class="row">
-
-                    <div class="col-sm-8 mr-auto text-center">
-                        <h2>Get Connected<br><strong>Follow Me</strong></h2>
-                        <p class="lead">Get connected with me on social networks!</p>
-                    </div>
-                    
-                    <div class="col-md-12">
-                        <ul class="connected-icons social-icons">                            
-                            <li class="connected-icon">
-                                <a target="_blank" href="https://www.facebook.com/ishinchong">
-                                    <i class="ion-social-facebook"></i>
-                                    <h5>Facebook</h5>
-                                    <p>Be My Friend</p>
-                                </a>
-                            </li>
-
-                            <li class="connected-icon">
-                                <a target="_blank" href="https://www.linkedin.com/in/shin-chong-87802a3a">
-                                    <i class="ion-social-linkedin"></i> 
-                                    <h5>Linkedin</h5>
-                                    <p>Link Me</p>
-                                </a>
-                            </li>
-
-                            <li class="connected-icon">
-                                <a target="_blank" href="https://www.instagram.com/ishinchong">
-                                    <i class="ion-social-instagram"></i>
-                                    <h5>Instagram</h5>
-                                    <p>See My Pictures</p>
-                                </a>
-                            </li>
-                        </ul>        
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Get Connected -->
-        
-        <script src="js/jquery.js"></script>
-        <script src="js/init.js"></script>
-        <script src="js/scripts.js"></script>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-101006199-1', 'auto');
-            ga('send', 'pageview');
-        </script>
-    </body>
+</body>
 </html>
